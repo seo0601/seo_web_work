@@ -20,6 +20,43 @@ public class UsersDao {
 		return dao;
 	}
 	
+	//비밀번호를 수정하는 메소드
+	public boolean updatePwd(UsersDto dto) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		int rowCount = 0;
+
+		try {
+			conn = new DbcpBean().getConn();
+			//수정할 미완성의 sql문
+			String sql = "UPDATE users "
+					+ " SET pwd=?"
+					+ " WHERE id=? AND pwd=?";
+			pstmt = conn.prepareStatement(sql);
+			//?에 바인딩 할 것이 있으면 해주고
+			pstmt.setString(1, dto.getNewPwd());
+			pstmt.setString(2, dto.getId());
+			pstmt.setString(3, dto.getPwd());
+			//INSERT OR UPDATE OR DELETE 문을 수행하고 수정,삭제,추가된 ROW의 개수를 리턴 받기
+			rowCount = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (Exception e) {
+			}
+		}
+		if (rowCount > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 	//인자로 전달된 아이디에 해당하는 가입 정보를 리턴해주는 메소드
 	public UsersDto getData(String id) {
 		UsersDto dto = null;
