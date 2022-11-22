@@ -29,8 +29,8 @@ public class UsersDao {
 		try {
 			conn = new DbcpBean().getConn();
 			//수정할 미완성의 sql문
-			String sql = "DELETE FROM users"
-					+ " WEHRE id=?";
+			 String sql = "DELETE FROM users"
+		               + " WHERE id=?";
 			pstmt = conn.prepareStatement(sql);
 			//?에 바인딩 할 것이 있으면 해주고
 			pstmt.setString(1, id);

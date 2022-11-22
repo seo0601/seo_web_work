@@ -37,7 +37,7 @@
 		document.querySelector("#myForm").addEventListener("submit", function(event){
 			let pwd1 = document.querySelector("#newPwd").value;
 			let pwd2 = document.querySelector("#newPwd2").value;
-			//새 비민번호와 비밀번호 확인이 일치하지 않으면 폼 전손을 막는다.
+			//새 비민번호와 비밀번호 확인이 일치하지 않으면 폼 전송을 막는다.
 			if(pwd1 != pwd2){
 				alert("비밀번호를 확인 하세요!")
 				//폼 제출 막기
