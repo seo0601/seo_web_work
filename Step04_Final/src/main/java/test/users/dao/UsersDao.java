@@ -20,6 +20,51 @@ public class UsersDao {
 		return dao;
 	}
 	
+	//인자로 전달된 아이디에 해당하는 가입 정보를 리턴해주는 메소드
+	public UsersDto getData(String id) {
+		UsersDto dto = null;
+		//필요한 객체를 담을 지역 변수를 미리 만들어 둔다.
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			//Connection pool에서 Connection 객체를 하나 얻어 온다.
+			conn = new DbcpBean().getConn();
+			//실행할 sql 문의 뼈대 구성하기
+			String sql = "SELECT pwd, email, profile, TO_CHAR(regdate, 'YYYY.MM.DD') AS regdate"
+					+ " FROM users"
+					+ " WHERE id=?";
+			
+			pstmt = conn.prepareStatement(sql);
+			//sql 문의 ?에 바인딩 할 것이 있으면 한다.
+			pstmt.setString(1, id);
+			//SELECT 문을 수행하고 결과 값을 받아온다.
+			rs = pstmt.executeQuery();
+			//반복문 돌면서 ResultSet에서 필요한 값을 얻어낸다.
+			if (rs.next()) {
+				dto = new UsersDto();
+				dto.setId(id);
+				dto.setPwd(rs.getString("pwd"));
+				dto.setEmail(rs.getString("email"));
+				dto.setProfile(rs.getString("profile"));
+				dto.setRegdate(rs.getString("regdate"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (Exception e) {
+			}
+		}
+		return dto;
+	}
+	
 	//인자로 전달되는 dto에 있는 아이디와 비밀번호를 이용해서 해당 정보가 유효한 정보인지 여부를 리턴하는 메소드
 	public boolean isValid(UsersDto dto) {
 		
