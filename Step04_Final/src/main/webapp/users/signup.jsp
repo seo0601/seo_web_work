@@ -4,7 +4,6 @@
     pageEncoding="UTF-8"%>
 <%
 	//1. 폼 전송되는 아이디, 비밀번호, 이메일 주소를 읽어온다.
-	request.setCharacterEncoding("utf-8");
 	//("")에는 input name의 밸류와 같아야 한다.
 	String id = request.getParameter("id");
 	String pwd = request.getParameter("pwd");

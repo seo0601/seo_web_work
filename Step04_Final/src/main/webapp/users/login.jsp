@@ -11,7 +11,6 @@
 	String encodedUrl=null;
 	
 	//1. 폼 전송되는 아이디, 비밀번호 읽어오기
-	request.getParameter("utf-8");
 	String id = request.getParameter("id");
 	String pwd = request.getParameter("pwd");
 	//2. DB에 실제로 존재하는 정보인지 확인하기(맞는 정보이면 로그인 처리도 한다.)
@@ -22,7 +21,7 @@
 	boolean isValid = dao.isValid(dto);
 	if(isValid){
 		//session scope에 id라는 키 값으로 로그인된 아이디 담기
-		session.setAttribute("id", id);
+		session.setAttribute("id", id); //누가 요청했는지 알 수 있게 id를 ssesion에 담기
 		session.setMaxInactiveInterval(60); 
 	}
 
