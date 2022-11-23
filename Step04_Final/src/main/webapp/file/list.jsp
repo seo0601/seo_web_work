@@ -39,6 +39,7 @@
 						</td>
 						<td><%=tmp.getFileSize() %></td>
 						<td><%=tmp.getRegdate() %></td>
+						<th><a href="delete.jsp?num=<%=tmp.getNum()%>">삭제</a></th>
 					</tr>
 				<%} %>
 			</tbody>
