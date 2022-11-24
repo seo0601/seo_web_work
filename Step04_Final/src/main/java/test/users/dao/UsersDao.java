@@ -64,12 +64,13 @@ public class UsersDao {
 			conn = new DbcpBean().getConn();
 			//수정할 미완성의 sql문
 			String sql = "UPDATE users"
-					+ " SET email=?"
+					+ " SET email=?, profile=?"
 					+ " WHERE id=?";
 			pstmt = conn.prepareStatement(sql);
 			//?에 바인딩 할 것이 있으면 해주고
 			pstmt.setString(1, dto.getEmail());
-			pstmt.setString(2, dto.getId());			
+			pstmt.setString(2, dto.getProfile());	
+			pstmt.setString(3, dto.getId());
 			//INSERT OR UPDATE OR DELETE 문을 수행하고 수정,삭제,추가된 ROW의 개수를 리턴 받기
 			rowCount = pstmt.executeUpdate();
 		} catch (Exception e) {
