@@ -5,7 +5,7 @@
 	String thisPage = request.getParameter("thisPage");
 	String id = (String)session.getAttribute("id");
 %>
-<nav class="navbar navbar-expand-md navbar-dark" style="background-color:black;">
+<nav class="navbar navbar-expand-lg  navbar-light" style="background-color: white;"">
 	<div class="container">
 		<a class="navbar-brand" href="${pageContext.request.contextPath}/">
 			<img src="https://acornedu.co.kr/images/n_logo.png" alt="" width="100" height="70" class="d-inline-block align-text-top"/>
@@ -23,12 +23,13 @@
                <li class="nav-item">
                   <a class="nav-link <%= thisPage.equals("study") ? "active" : "" %>" href="${pageContext.request.contextPath }/private/study.jsp">회원전용공간(공부)</a>
                </li>
-               
+               <%} %>
+               <%if(id != null) {%>
                <li class="nav-item">
                   <a class="nav-link <%= thisPage.equals("game") ? "active" : "" %>" href="${pageContext.request.contextPath }/private/game.jsp">회원전용공간(게임)</a>
                </li>
                <%} %>
-
+			   	
                <li class="nav-item">
                   <a class="nav-link <%= thisPage.equals("file_list") ? "active" : "" %>" href="${pageContext.request.contextPath }/file/list.jsp">자료실</a>
                </li>

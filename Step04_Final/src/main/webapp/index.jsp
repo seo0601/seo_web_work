@@ -19,20 +19,25 @@
 	</jsp:include>
 	<div class="container">
 		<%if(id != null) {%>
-			<p>
-				<a href="${pageContext.request.contextPath}/users/private/info.jsp"><%=id %></a> 님 로그인 중...
-				<a href="${pageContext.request.contextPath}/users/logout.jsp">로그아웃</a>
-			</p>
+				<p>
+					<a href="${pageContext.request.contextPath}/users/private/info.jsp"><%=id %></a> 님 로그인 중...
+					<br />
+					<a href="${pageContext.request.contextPath}/users/logout.jsp">로그아웃</a>
+				</p>
 		<%}else {%>
-			<a href="${pageContext.request.contextPath}/users/loginform.jsp">로그인</a>
+			<button style="background-color: #FFFFFF" type="button" onclick="location.href='${pageContext.request.contextPath}/users/loginform.jsp'">로그인</button>
 		<%} %>
-		<h1>인덱스 페이지입니다.</h1>
+		<br />
+		<a href="https://github.com/seo0601/seo_web_work" target="_blank">
+			<img width="300px" height="300px"  src="https://user-images.githubusercontent.com/76125650/139602266-044d30d7-1ad5-4b59-a0db-bf0777dd8b7a.png" />
+		</a>
+		<a href="https://getbootstrap.com/" target="_blank">
+			<img width="300px" height="300px" src="https://getbootstrap.kr/docs/5.2/assets/brand/bootstrap-logo-shadow.png" />
+		</a>
+		<a href="https://acornedu.co.kr/index.jsp"  target="_blank">
+			<img width="300px" height="300px" src="https://t1.daumcdn.net/cfile/blog/2701793C56B186792C" />
+		</a>
 	</div>
-	
-	
-	
-	
-	
 	<jsp:include page="/include/footer.jsp"></jsp:include>
 </body>
 </html>

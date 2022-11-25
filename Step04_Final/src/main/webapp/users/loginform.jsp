@@ -28,6 +28,7 @@
 				<label class="form-label" for="id">아이디</label>
 				<input type="text" class="form-control" name="id" id="id"/>
 			</div>
+			<div id="loginHelp" class="form-text">아이디는 영어로만 입력하세요</div>
 			<div>
 				<label for="pwd" class="form-label">비밀번호</label>
 				<input type="text" class="form-control" name="pwd" id="pwd" />

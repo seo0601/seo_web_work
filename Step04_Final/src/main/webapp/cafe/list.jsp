@@ -50,8 +50,10 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </head>
 <body>
+	<jsp:include page="/include/navbar.jsp">
+		<jsp:param value="index" name="thisPage"/>
+	</jsp:include>
 	<div class="container">
-		<a href="${pageContext.request.contextPath}/cafe/private/insertform.jsp">글쓰기</a>
 		<h3>카페 글 목록입니다.</h3>
 		<table class="table table-striped-columns">
 			<thead class="table-dark">
@@ -77,8 +79,13 @@
 					<%} %>
 			</tbody>
 		</table>
+		
+		<div class="container text-end" >
+		<a class="btn btn-primary" href="${pageContext.request.contextPath}/cafe/private/insertform.jsp">글쓰기</a>
+		</div>
+		
 		<nav>
-			 <ul class="pagination">
+			 <ul class="pagination pagination-sm justify-content-center">
 				 <%if(startPageNum != 1) {%>
 				 	<li class="page-item">
 				 		<a class="page-link" href="list.jsp?pageNum=<%=startPageNum-1%>">Prev</a>
@@ -97,7 +104,8 @@
 				 </li>
 				 <%}%>	
 			</ul>
-		</nav>
+		</nav>	
 	</div>
+	<jsp:include page="/include/footer.jsp"></jsp:include>
 </body>
 </html>
