@@ -16,8 +16,20 @@
 	<jsp:include page="/include/navbar.jsp">
 		<jsp:param value="index" name="thisPage"/>
 	</jsp:include>
+	<div class="container">
+		<div class="dropdown">
+			<button class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+				회원전용공간
+			</button>
+			<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+			    <li><a class="dropdown-item" href="study.jsp">회원전용공간(공부)</a></li>
+			    <li><a class="dropdown-item" href="game.jsp">회원전용공간(게임)</a></li>
+	  		</ul>
+		</div>
 	<h1>공부 페이지입니다.</h1>
 	<p><%=id %> 님 열심히 공부해요!</p>
+		<img src="https://images.pexels.com/photos/301920/pexels-photo-301920.jpeg?cs=srgb&dl=pexels-pixabay-301920.jpg&fm=jpg" width="500px" height="500px" />
+	</div>
 	<jsp:include page="/include/footer.jsp"></jsp:include>
 </body>
 </html>

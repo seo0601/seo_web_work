@@ -55,10 +55,6 @@
 				<th>내용</th>
 				<td><textarea rows="10" readonly><%=dto.getContent() %></textarea></td>
 			</tr>
-			<tr>
-				<th>내용</th>
-				<td><pre><%=dto.getContent() %></pre></td>
-			</tr>
 		</table>
 		<%
          //로그인된 아이디가 있으면 읽어온다(null 일수도 있다)

@@ -9,6 +9,9 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </head>
 <body>
+	<jsp:include page="/include/navbar.jsp">
+		<jsp:param value="index" name="thisPage"/>
+	</jsp:include>
 	<div class="container">
 		<h3>파일 업로드 폼입니다.</h3>
 		<!-- 
@@ -23,14 +26,15 @@
 		 <form action="upload.jsp" method="post" enctype="multipart/form-data">
 		 	<div>
 		 		<label for="title" class="form-label">제목</label>
-		 		<input type="text" name="title" id="title" class="form-control" />
+		 		<input type="text" name="title" style="width:300px" id="title" class="form-control" />
 		 	</div>
 		 	<div>
 		 		<label for="myFile">첨부 파일</label>
 		 		<input type="file" name="myFile" id="myFile" />
 		 	</div>
-		 	<button style="background-color: #FFFFFF" type="submit">업로드</button>
+		 	<button class="btn btn-outline-primary" type="submit">업로드</button>
 		 </form>
 	</div>
+	<jsp:include page="/include/footer.jsp"></jsp:include>
 </body>
 </html>

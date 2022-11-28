@@ -52,6 +52,10 @@
 						<div><%=dto.getContent() %></div>
 					</td>
 			</tr>
+			<tr>
+				<th>내용</th>
+				<td><pre><%=dto.getContent() %></pre></td>
+			</tr>
 		</table>
 	</div>
 </body>

@@ -19,15 +19,15 @@
 		<form action="pwd_update.jsp" method="post" id="myForm">
 			<div class="mb-3">
 				<label for="pwd" class="form-label" >기존 비밀번호</label>
-				<input class="form-control" type="password" name="pwd" id="pwd" />
+				<input class="form-control" style="width:300px" type="password" name="pwd" id="pwd" />
 			</div>
 			<div class="mb-3">
 				<label for="newPwd" class="form-label">새 비밀번호</label>
-				<input class="form-control" type="password" name="newPwd" id="newPwd" />
+				<input class="form-control" style="width:300px" type="password" name="newPwd" id="newPwd" />
 			</div>
 			<div class="mb-3">
 				<label for="newPwd2" class="form-label">새 비밀번호 확인</label>
-				<input class="form-control" type="password" id="newPwd2" />
+				<input class="form-control" style="width:300px" type="password" id="newPwd2" />
 			</div>
 			<button type="submit" class="btn btn-outline-primary">수정하기</button>
 			<button type="reset" class="btn btn-outline-primary">리셋</button>

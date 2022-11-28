@@ -30,7 +30,7 @@
 </head>
 <body>
 	<div class="container">
-		<h3>회원 가입 수정 폼입니다.</h3>
+		<h3>회원 정보 수정 폼입니다.</h3>
         <a id="profileLink" href="javascript:">
 	         <%if(dto.getProfile() == null){%>
 	            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -47,11 +47,11 @@
             value="<%=dto.getProfile()==null ? "empty" : dto.getProfile()%>"/>
 			 <div class="mb-3">
 				<label for="id" class="form-label">아이디</label>
-				<input type="text" id="id" class="form-control" value="<%=dto.getId() %>" disabled />
+				<input type="text" id="id" style="width:300px" class="form-control" value="<%=dto.getId() %>" disabled />
 			</div>
 			 <div class="mb-3" class="form-label">
 				<label for="email">이메일</label>
-				<input type="text" id="email" name="email" class="form-control" value="<%=dto.getEmail() %>" />
+				<input type="text" id="email" style="width:300px" name="email" class="form-control" value="<%=dto.getEmail() %>" />
 			</div>
 			<button type="submit" class="btn btn-outline-primary">수정 확인</button>
 			<button type="reset" class="btn btn-outline-primary">취소</button>
