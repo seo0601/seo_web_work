@@ -22,13 +22,14 @@
 	<jsp:include page="/include/navbar.jsp">
 		<jsp:param value="index" name="thisPage"/>
 	</jsp:include>
+	
 	<div class="container">
 		<div class="dropdown">
 			<button class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
 				접속
 			</button>
 			<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-			    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/users/loginform.jsp">로그인</a></li>
+			    <li><a class="dropdown-item" href="loginform.jsp">로그인</a></li>
 			    <li><a class="dropdown-item" href="signup_form.jsp">회원가입</a></li>
 	  		</ul>
 		</div>
@@ -50,6 +51,7 @@
 			<button class="btn btn-outline-primary" type="submit">로그인</button>
 		</form>
 	</div>
+	
 	<jsp:include page="/include/footer.jsp"></jsp:include>
 </body>
 </html>

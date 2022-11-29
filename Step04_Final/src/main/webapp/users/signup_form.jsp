@@ -14,7 +14,7 @@
 	</jsp:include>
 	<div class="container">
 		<div class="dropdown">
-			<button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+			<button class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
 				접속
 			</button>
 			<ul class="dropdown-menu">
