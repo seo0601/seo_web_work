@@ -24,13 +24,21 @@
 				<button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='${pageContext.request.contextPath}/users/loginform.jsp'">로그인</button>
 			<%} %>
 		</div>
-		<a href="users/signup_form.jsp">회원가입</a>
-		<a href="users/loginform.jsp">로그인</a>
-		<a href="">성적 입력</a>
-		<a href="">성적 보기</a>
-		<a href="">과제 제출</a>
-		<a href="">건의 사항</a>
-		<a href="">게시판</a>
+		<ul>
+			<li><a href="${pageContext.request.contextPath}/users/signup_form.jsp">회원가입</a></li>
+			<li><a href="${pageContext.request.contextPath}/users/loginform.jsp">로그인</a></li>
+			<li><a href="${pageContext.request.contextPath}/grade/grade_view.jsp">성적 조회</a></li>
+			<li><a href="">과제 제출</a></li>
+			<li><a href="">건의 사항</a></li>
+			<li><a href="">게시판</a></li>
+			<!-- 관리자일때만 메뉴확인가능 -->
+			<% if(id != null && id.equals("admin")){ %>
+					<li><a href="${pageContext.request.contextPath}/admin/grade_inputform.jsp">성적 입력</a></li>
+					<li><a href="${pageContext.request.contextPath}/admin/grade_view.jsp">성적 조회</a></li>
+				<%}%>
+
+			
+		</ul>
 	</div>
 </body>
 </html>
