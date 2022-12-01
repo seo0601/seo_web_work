@@ -1,19 +1,19 @@
-<%@page import="test.users.dto.UsersDto"%>
-<%@page import="test.users.dao.UsersDao"%>
+<%@page import="test.member.dto.MemberDto"%>
+<%@page import="test.member.dao.MemberDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-//1. 폼이 전송되는 수정할 회원의 정보를 읽어온다.
+	//1. 폼이 전송되는 수정할 회원의 정보를 읽어온다.
 	request.setCharacterEncoding("utf-8");
 	int num = Integer.parseInt(request.getParameter("num"));
 	String name = request.getParameter("name");
 	String addr = request.getParameter("addr");
 	
 	//회원 한 명의 정보를 MemberDto 객체에 담는다.
-	UsersDto dto = new UsersDto(num, name, addr);
+	MemberDto dto = new MemberDto(num, name, addr);
 	
 	//2. MemberDao 객체를 이용해서 DB에 저장한다.
-	UsersDao dao = UsersDao.getInstance();
+	MemberDao dao = MemberDao.getInstance();
 	boolean isSuccess = dao.update(dto);
 	
 	//3. 응답한다.

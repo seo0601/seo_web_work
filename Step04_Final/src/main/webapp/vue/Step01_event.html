@@ -15,23 +15,6 @@
         <button v-on:click="clicked">눌러보셈</button> 
         <p>{{msg}}</p>
     </div>
-    <div>
-    	<button onclick="clicked()">눌러보셈2</button>
-    	<p id="one"></p>
-    </div>
-    <script>
-    	//msg라는 변수를 만들고 초기 값을 지정한다.
-    	let msg="";
-    	//msg 변수 안에 있는 값을 id가 one인 요소의 innerText로 출력한다.( 당연히 아무것도 출력 안된다.)
-    	document.querySelector("#one").innerText=msg;
-    	//버튼을 눌렀을 때 호출되는 함수
-    	function clicked(){
-    		//msg 변수 안에 있는 값을 바꾼다. (이걸 바꾼다고해서 p요소의 innerText가 자동으로 바뀌지는 않는다.)
-    		msg="버튼을 눌렀네요?"
-    		//p요소의 innerText가 수정되기 위해서는 아래의 코드가 필요하다.	
-   			document.querySelector("#one").innerText=msg;
-    	}
-    </script>
     
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>

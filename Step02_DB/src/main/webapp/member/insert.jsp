@@ -1,9 +1,9 @@
-<%@page import="test.users.dto.UsersDto"%>
-<%@page import="test.users.dao.UsersDao"%>
+<%@page import="test.member.dto.MemberDto"%>
+<%@page import="test.member.dao.MemberDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-/*
+	/*
 		1. 폼 전송되는 회원의 이름과 주소를 읽어온다.
 		2. MemberDao에 MemberDto를 전달하면 DB에 저장을 하고 작업의 성공 여부를 리턴하는 insert() 메소드를 만든다.
 		   회원 번호는 시퀀스를 이용해서 들어가도록 한다.	
@@ -13,21 +13,21 @@
 	*/
 %>
 
-<%
-//폼에 전송되는 회원의 이름과 주소를 읽어온다.
+<%  	
+		//폼에 전송되는 회원의 이름과 주소를 읽어온다.
 		request.setCharacterEncoding("utf-8");
 		String name = request.getParameter("name");
 		String addr = request.getParameter("addr");
 		
 		//MemberDto 객체에 회원의 이름과 주소를 담고
-UsersDtoto dto = neUsersDtoto();
+		MemberDto dto = new MemberDto();
 		dto.setName(name);
 		dto.setAddr(addr);
 		
 		//MemberDao 객체를 이용해서 DB에 저장하고 작업 성공 여부를 리턴받는다.
-		UsersDao dao = UsersDao.getInstance();
-		boolean isSuccess = dao.insert(dto);
-%>
+		MemberDao dao = MemberDao.getInstance();
+		boolean isSuccess = dao.insert(dto);	
+	%>
 <!DOCTYPE html>
 <html>
 <head>
