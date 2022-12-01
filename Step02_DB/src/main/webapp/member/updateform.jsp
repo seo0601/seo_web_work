@@ -1,15 +1,13 @@
-<%@page import="test.member.dto.MemberDto"%>
-<%@page import="test.member.dao.MemberDao"%>
+<%@page import="test.users.dto.UsersDto"%>
+<%@page import="test.users.dao.UsersDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	//1. GET 방식 파라미터로 전달하는 수정할 회원의 번호(Primary key)를 읽어온다.
+//1. GET 방식 파라미터로 전달하는 수정할 회원의 번호(Primary key)를 읽어온다.
 	int num = Integer.parseInt(request.getParameter("num"));
 	//2. MemberDao 객체를 이용해서 회원 한 명의 정보를 얻어온다.
-	MemberDao dao = MemberDao.getInstance();
-	MemberDto dto = dao.getData(num);
+	UsersDao dao = UsersDao.getInstance();UsersDtoto dto = dao.getData(num);
 	//3. 수정할 회원의 정보의 수정폼에 출력해서 응답한다.
-
 %>
 <!DOCTYPE html>
 <html>

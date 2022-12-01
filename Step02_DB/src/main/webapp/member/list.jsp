@@ -1,13 +1,13 @@
-<%@page import="test.member.dto.MemberDto"%>
+<%@page import="test.users.dto.UsersDto"%>
 <%@page import="java.util.List"%>
-<%@page import="test.member.dao.MemberDao"%>
+<%@page import="test.users.dao.UsersDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	//MemberDao 객체의 잠조 값을 얻어와서
-	MemberDao dao = MemberDao.getInstance();
+//MemberDao 객체의 잠조 값을 얻어와서
+	UsersDao dao = UsersDao.getInstance();
 	//회원 목록을 얻어온다
-	List<MemberDto> list = dao.getList();
+	LisUsersDtoto> list = dao.getList();
 %>    
 <!DOCTYPE html>
 <html>
@@ -70,7 +70,9 @@
 				</tr>
 			</thead>			
 			<tbody>
-			<%for(MemberDto tmp : list){ %>
+			<%
+			foUsersDtoto tmp : list){
+			%>
 				<tr>
 					<td><%=tmp.getNum() %></td>
 					<td><%=tmp.getName() %></td>

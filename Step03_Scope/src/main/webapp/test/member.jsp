@@ -1,9 +1,9 @@
-<%@page import="test.member.dto.MemberDto"%>
+<%@page import="test.users.dto.UsersDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	//"dto"라는 키 값으로 담긴 MemberDto type의 참조 값 얻어오기
-	MemberDto dto = (MemberDto)request.getAttribute("dto");
+//"dto"라는 키 값으로 담긴 MemberDto type의 참조 값 얻어오기
+	UsersDto dto = (UsersDto)request.getAttribute("dto");
 %>
 <!DOCTYPE html>
 <html>

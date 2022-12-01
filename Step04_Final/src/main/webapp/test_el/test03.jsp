@@ -1,9 +1,9 @@
-<%@page import="test.member.dto.*"%>
+<%@page import="test.users.dto.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	// MemberDto 객체를 생성해서 회원 한명의 정보를 담고 
-	MemberDto dto=new MemberDto();
+// MemberDto 객체를 생성해서 회원 한명의 정보를 담고 
+	UsersDto dto=new UsersDto();
 	dto.setNum(1);
 	dto.setName("김구라");
 	dto.setAddr("노량진");
@@ -19,8 +19,8 @@
 </head>
 <body>
 	<%
-		//request.getAttribute로 읽어낼 때는 object 타입으로 읽어서 원래 type으로 캐스팅을 해줘야 한다.
-		MemberDto result = (MemberDto)request.getAttribute("dto");
+	//request.getAttribute로 읽어낼 때는 object 타입으로 읽어서 원래 type으로 캐스팅을 해줘야 한다.
+			UsersDto result = (UsersDto)request.getAttribute("dto");
 	%>
 	<p> 번호 : <strong><%=result.getNum() %></strong></p>
 	<p> 이름 : <strong><%=result.getName() %></strong></p>
