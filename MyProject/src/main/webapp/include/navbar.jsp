@@ -17,6 +17,9 @@
          <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                <li class="nav-item">
+                  <a class="nav-link <%= thisPage.equals("Location") ? "active" : "" %>" href="${pageContext.request.contextPath }/location.jsp">찾아오는 길</a>
+               </li>
+               <li class="nav-item">
                   <a class="nav-link <%= thisPage.equals("sign_form") ? "active" : "" %>" href="${pageContext.request.contextPath }/users/signup_form.jsp">회원가입</a>
                </li>
                <%if(id != null) {%>
