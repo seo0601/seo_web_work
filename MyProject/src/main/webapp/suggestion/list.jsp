@@ -1,7 +1,5 @@
-<%@page import="test.file.dao.FileDao"%>
-<%@page import="test.file.dto.FileDto"%>
-<%@page import="test.task.dao.TaskDao"%>
-<%@page import="test.task.dto.TaskDto"%>
+<%@page import="test.suggestion.dto.SuggestionDto"%>
+<%@page import="test.suggestion.dao.SuggestionDao"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -28,7 +26,7 @@
 	//하단 끝 페이지 번호
 	int endPageNum = startPageNum + PAGE_DISPLAY_COUNT - 1;
 	//전체 글의 갯수
-	int totalRow = TaskDao.getInstance().getCount();
+	int totalRow = SuggestionDao.getInstance().getCount();
 	//전체 페이지의 갯수
 	int totalPageCount = (int)Math.ceil(totalRow/(double)PAGE_ROW_COUNT);
 	//끝 페이지 번호가 전체 페이지의 갯수보다 크게 계산되면 잘못된 것
@@ -36,21 +34,21 @@
 		endPageNum = totalPageCount;
 	}
 	//CafeDto 객체를 생성해서
-	TaskDto dto = new TaskDto();
+	SuggestionDto dto = new SuggestionDto();
 	//위에서 계산한 startRowNum과 endRowNum을 담고
 	dto.setStartRowNum(startRowNum);
 	dto.setEndRowNum(endRowNum);
 	//CafeDto를 인자로 전달해서 글 목록을 얻어온기
-	List<TaskDto> list = TaskDao.getInstance().getList(dto);
+	List<SuggestionDto> list = SuggestionDao.getInstance().getList(dto);
 	
-	FileDto fDto = new FileDto();
-	List<FileDto> fList = FileDao.getInstance().getList(fDto);
+	SuggestionDto fDto = new SuggestionDto();
+	List<SuggestionDto> fList = SuggestionDao.getInstance().getList(fDto);
 %>    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>/task/list.jsp</title>
+<title>/suggestion/list.jsp</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </head>
@@ -59,7 +57,7 @@
 		<jsp:param value="index" name="thisPage"/>
 	</jsp:include>
 	<div class="container">
-		<h3>게시판</h3>
+		<h3>건의사항</h3>
 		<table class="table table-striped-columns">
 			<thead class="table-dark">
 				<tr>
@@ -71,12 +69,12 @@
 				</tr>
 			</thead>
 			<tbody>				
-					<%for(TaskDto tmp : list){ %>
+					<%for(SuggestionDto tmp : list){ %>
 						<tr>
 							<td><%=tmp.getNum() %></td>
 							<td><%=tmp.getWriter() %></td>
 							<td>
-								<a href="detail.jsp?num=<%=tmp.getNum()%>"><%=tmp.getTitle() %></a>
+								<a href="private/detail.jsp?num=<%=tmp.getNum()%>"><%=tmp.getTitle() %></a>
 							</td>
 							<td><%=tmp.getViewCount() %></td>
 							<td><%=tmp.getRegdate() %></td>
@@ -86,7 +84,7 @@
 		</table>
 		
 		<div class="container text-end" >
-		<a class="btn btn-primary" href="${pageContext.request.contextPath}/task/private/insertform.jsp">글쓰기</a>
+		<a class="btn btn-primary" href="${pageContext.request.contextPath}/suggestion/private/insertform.jsp">글쓰기</a>
 		</div>
 		
 		<nav>
@@ -111,6 +109,5 @@
 			</ul>
 		</nav>	
 	</div>
-	  <jsp:include page="/include/footer.jsp"></jsp:include>
 </body>
 </html>

@@ -9,8 +9,13 @@
 <head>
 <meta charset="UTF-8">
 <title>/index.jsp</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </head>
 <body>
+	<jsp:include page="/include/navbar.jsp">
+		<jsp:param value="index" name="thisPage"/>
+	</jsp:include>
 	<div class="container">
 		<h3>에이콘 아카데미 학생 관리</h3>
 		<div>
@@ -24,21 +29,7 @@
 				<button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='${pageContext.request.contextPath}/users/loginform.jsp'">로그인</button>
 			<%} %>
 		</div>
-		<ul>
-			<li><a href="${pageContext.request.contextPath}/users/signup_form.jsp">회원가입</a></li>
-			<li><a href="${pageContext.request.contextPath}/users/loginform.jsp">로그인</a></li>
-			<li><a href="${pageContext.request.contextPath}/grade/grade_view.jsp">성적 조회</a></li>
-			<li><a href="${pageContext.request.contextPath}/task/list.jsp">과제 게시판</a></li>
-			<li><a href="">건의 사항</a></li>
-			<li><a href="">게시판</a></li>
-			<!-- 관리자일때만 메뉴확인가능 -->
-			<% if(id != null && id.equals("admin")){ %>
-					<li><a href="${pageContext.request.contextPath}/admin/grade_inputform.jsp">성적 입력</a></li>
-					<li><a href="${pageContext.request.contextPath}/admin/grade_view.jsp">성적 조회</a></li>
-				<%}%>
-
-			
-		</ul>
 	</div>
+	<jsp:include page="/include/footer.jsp"></jsp:include>
 </body>
 </html>

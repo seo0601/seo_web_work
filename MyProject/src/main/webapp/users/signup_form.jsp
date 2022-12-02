@@ -9,35 +9,46 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </head>
 <body>
+	<jsp:include page="/include/navbar.jsp">
+		<jsp:param value="index" name="thisPage"/>
+	</jsp:include>
 	<div class="container">	
-		<h4>회원 가입</h4>
+		<div class="row">
+			<div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        		<div class="card card-signin my-5">
+         			 <div class="card-body">
+            			<h5 class="card-title text-center">회원 가입</h5>
 		<form action="signup.jsp" method="post" id="signupForm">
-			<div>
+			<div class="form-label-group">
 				<label class="control-label" for="id">아이디</label>
 				<input class="form-control" style="width:300px" type="text" name="id" id="id" />
 				<samll class="form-text-muted">영문자 소문자로 시작하고 5~10글자 이내로 입력하세요.</samll>
-				<div class="vaild-feedbck">사용 가능한 아이디입니다.</div>
+				<div class="valid-feedback">사용 가능한 아이디입니다.</div>
 				<div class="invalid-feedback">사용할 수 없는 아이디입니다.</div>
 			</div>
-			<div>
+			<div class="form-label-group ">
 				<label class="control-label" for="pwd">비밀번호</label>
 				<input class="form-control" style="width:300px" type="password" name="pwd" id="pwd" />
 				<samll class="form-text-muted">특수 문자를 하나 이상 조합하세요</samll>	
 				<div class="invalid-feedback">비밀 번호를 확인하세요</div>			
 			</div>
-			<div>
+			<div class="form-label-group">
 				<label class="control-label" for="pwd">비밀번호 확인</label>
 				<input class="form-control" style="width:300px" type="password" name="pwd2" id="pwd2" />				
 			</div>
-			<div>
+			<div class="form-label-group">
 				<label class="control-label" for="email">이메일</label>
 				<input class="form-control" style="width:300px" type="text" name="email" id="email" />
 				<div class="invalid-feedback">이메일 형식에 맞게 입력하세요</div>		
 			</div>
 			<br />
-			<button class="btn" type="submit">가입</button>
+			<button class="btn float-center" type="submit">가입</button>
 		</form>
-	</div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
    <script>
    		//유효성 여부를 저장할 변수를 만들고 초기값 대입
    		let isIdValid = false;
@@ -152,5 +163,6 @@
 	      });
       
    </script>
+   <jsp:include page="/include/footer.jsp"></jsp:include>
 </body>
 </html>
