@@ -17,18 +17,7 @@
 		<jsp:param value="index" name="thisPage"/>
 	</jsp:include>
 	<div class="container">
-		<h3>에이콘 아카데미 학생 관리</h3>
-		<div>
-			<%if(id != null) {%>
-					<p>
-						<a href="${pageContext.request.contextPath}/users/private/info.jsp"><%=id %></a>님
-						<br />					
-						<button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='${pageContext.request.contextPath}/users/logout.jsp'">로그아웃</button>
-					</p>
-			<%}else {%>
-				<button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='${pageContext.request.contextPath}/users/loginform.jsp'">로그인</button>
-			<%} %>
-		</div>
+
 	</div>
 	<jsp:include page="/include/footer.jsp"></jsp:include>
 </body>

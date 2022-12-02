@@ -1,3 +1,4 @@
+<%@page import="test.users.dto.UsersDto"%>
 <%@page import="test.grade.dto.GradeDto"%>
 <%@page import="java.util.List"%>
 <%@page import="test.grade.dao.GradeDao"%>
@@ -6,6 +7,7 @@
 <%
 	GradeDao dao = GradeDao.getInstance();
 	List<GradeDto> list = dao.getList();
+	String id = (String)session.getAttribute("id");
 %>
 <!DOCTYPE html>
 <html>
