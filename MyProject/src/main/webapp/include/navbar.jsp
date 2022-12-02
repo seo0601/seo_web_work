@@ -43,7 +43,7 @@
 						<a class="nav-link <%= thisPage.equals("grade") ? "active" : "" %>" href="${pageContext.request.contextPath}/admin/grade_inputform.jsp">성적 입력</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link <%= thisPage.equals("grade_view") ? "active" : "" %>" href="${pageContext.request.contextPath}/admin/grade_view.jsp">성적 조회</a>
+						<a class="nav-link <%= thisPage.equals("grade_view") ? "active" : "" %>" href="${pageContext.request.contextPath}/admin/users_view.jsp">회원 목록</a>
 					</li>
 				<%}%>
             </ul>

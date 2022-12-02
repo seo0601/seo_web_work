@@ -28,7 +28,7 @@
 		<%if(isSuccess) {%>
 			<p>
 				<strong><%=name %></strong>님의 성적이 입력되었습니다.
-				<a href="grade_view.jsp">성적 보러가기</a>
+				<a href="${pageContext.request.contextPath}/grade/grade_view.jsp">성적 보러가기</a>
 			</p>
 		<%}else{%>
 			<p>
