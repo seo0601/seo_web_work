@@ -28,7 +28,7 @@
 			<li><a href="${pageContext.request.contextPath}/users/signup_form.jsp">회원가입</a></li>
 			<li><a href="${pageContext.request.contextPath}/users/loginform.jsp">로그인</a></li>
 			<li><a href="${pageContext.request.contextPath}/grade/grade_view.jsp">성적 조회</a></li>
-			<li><a href="">과제 제출</a></li>
+			<li><a href="${pageContext.request.contextPath}/task/list.jsp">과제 게시판</a></li>
 			<li><a href="">건의 사항</a></li>
 			<li><a href="">게시판</a></li>
 			<!-- 관리자일때만 메뉴확인가능 -->
