@@ -11,14 +11,6 @@
 <title>/index.jsp</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-<style>
-	*{
-	font-family: 'Nanum Gothic';
-}
-	h1 {
-		font-family: 'Hanna';
-	}
-</style>
 </head>
 <body>
 	<jsp:include page="/include/navbar.jsp">
@@ -30,7 +22,7 @@
 		  <div class="carousel-inner">
 		    <div class="carousel-item active">
 		      <a href="https://www.opentutorials.org/course/1">	
-		    	 <img src="https://velog.velcdn.com/images%2Fgenie__rorok%2Fpost%2F3a933a5b-72de-4dfc-8568-14fcf97fe4ba%2Fimage.png"  class="d-block w-100" alt="...">
+		    	 <img src="https://velog.velcdn.com/images%2Fgenie__rorok%2Fpost%2F3a933a5b-72de-4dfc-8568-14fcf97fe4ba%2Fimage.png"  height="500px"class="d-block w-100" alt="...">
 		      </a>	
 		    </div>
 		    <div class="carousel-item">

@@ -32,7 +32,20 @@
 	         	 			<a class="nav-link <%= thisPage.equals("sign_form") ? "active" : "" %>" href="${pageContext.request.contextPath }/users/signup_form.jsp">회원가입</a>
 	         	 		<%} %>
 	         	 	</ul>
-        		</li>       
+        		</li>      
+        		   <!-- 관리자일때만 메뉴확인가능 -->
+					<% if(id != null && id.equals("admin")){ %>			
+						 <li class="nav-item dropdown">
+		         			 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+		           				 관리자
+		         			 </a>
+	         			 <ul class="dropdown-menu dropdown-menu-white">
+	       			   		<li class="nav-item">
+									<a class="nav-link <%= thisPage.equals("grade") ? "active" : "" %>" href="${pageContext.request.contextPath}/admin/grade_inputform.jsp">성적 입력</a>
+									<a class="nav-link <%= thisPage.equals("grade_view") ? "active" : "" %>" href="${pageContext.request.contextPath}/admin/users_view.jsp">회원 목록</a>
+							</li>
+						 </ul>
+					<%}%> 
                <li class="nav-item">
                   <a class="nav-link <%= thisPage.equals("Location") ? "active" : "" %>" href="${pageContext.request.contextPath }/location.jsp">찾아오는 길</a>
                </li>
@@ -47,6 +60,7 @@
                <li class="nav-item">
                   <a class="nav-link <%= thisPage.equals("cafe_list") ? "active" : "" %>" href="${pageContext.request.contextPath}/file/private/upload_form.jsp">과제 제출</a>
                </li>
+             
                <li class="nav-item dropdown">
          			 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
            				 커뮤니티
@@ -55,18 +69,10 @@
 		               <li class="nav-item">
 		               	  <a class="nav-link <%= thisPage.equals("task") ? "active" : "" %>" href="${pageContext.request.contextPath}/task/list.jsp">게시판</a>
 		                  <a class="nav-link <%= thisPage.equals("suggestion") ? "active" : "" %>" href="${pageContext.request.contextPath }/suggestion/list.jsp">건의 사항</a>
+		               	  <a class="nav-link <%= thisPage.equals("notice") ? "active" : "" %>" href="${pageContext.request.contextPath }/notice/list.jsp">공지 사항</a>
 		               </li>
                		</ui>
-               	</li>        
-               <!-- 관리자일때만 메뉴확인가능 -->
-			<% if(id != null && id.equals("admin")){ %>
-					<li class="nav-item">
-						<a class="nav-link <%= thisPage.equals("grade") ? "active" : "" %>" href="${pageContext.request.contextPath}/admin/grade_inputform.jsp">성적 입력</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link <%= thisPage.equals("grade_view") ? "active" : "" %>" href="${pageContext.request.contextPath}/admin/users_view.jsp">회원 목록</a>
-					</li>
-				<%}%>
+               	</li>      
          </div>	
 	</div>
 </nav>
