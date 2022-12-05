@@ -57,7 +57,7 @@
 		<jsp:param value="index" name="thisPage"/>
 	</jsp:include>
 	<div class="container">
-		<h3>건의사항</h3>
+		<h3 >건의사항</h3>
 		<table class="table table-striped-columns">
 			<thead class="table-dark">
 				<tr>
@@ -109,5 +109,6 @@
 			</ul>
 		</nav>	
 	</div>
+	<jsp:include page="/include/footer.jsp"></jsp:include>
 </body>
 </html>

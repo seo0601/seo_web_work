@@ -3,21 +3,6 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <style>
-
-html, body {
-  height: 100%;
-}
-
-.wrap {
-  position: relative;
-  min-height: 100%;
-  padding-bottom: 114px;
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-}
 </style>
 <div class="container fixed-bottom">
 	<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top mt-auto">
