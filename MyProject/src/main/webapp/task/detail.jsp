@@ -1,3 +1,6 @@
+<%@page import="java.util.List"%>
+<%@page import="test.commnet.dao.CommentDao"%>
+<%@page import="test.comment.dto.CommentDto"%>
 <%@page import="test.task.dao.TaskDao"%>
 <%@page import="test.task.dto.TaskDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -7,6 +10,9 @@
 	int num = Integer.parseInt(request.getParameter("num"));
 	//DB에서 해당 글의 정보를 얻어와서
 	TaskDto dto = TaskDao.getInstance().getData(num);
+	//댓긂 목록 불러오기
+	CommentDto dto2 = new CommentDto();
+	List<CommentDto> list = CommentDao.getInstance().getList(dto2);
 	//글의 조회수 1 증가 시키기
 	TaskDao.getInstance().addViewCount(num);
 	//응답한다.
@@ -76,11 +82,61 @@
             }
          </script>
       <%} %>      	
-      <div class="comment-txt">
-			<textarea name="comment" id="comment" placeholder="여러분의 소중한 댓글을 입력하세요"></textarea>
-			<button type="submit">입력</button>
+	</div>
+	<div class="container">
+
+		
+	<div class="container">
+		<div class="form-group">
+			<form method="post" action="${pageContext.request.contextPath}/comment/insert.jsp">
+				<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
+					<tr>
+						<td style="border-bottom:none;" valign="middle"><br><br></td>
+						<td><input type="text" name="id" id="id" placeholder="작성자"/></td>
+						<td><input type="text" style="height:50px;" class="form-control" placeholder="상대방을 존중하는 댓글을 남깁시다." name = "content"></td>
+						<td><br><br><input type="submit" class="btn-primary pull" value="댓글 작성"></td>
+					</tr>
+				</table>
+			</form>
 		</div>
 	</div>
+
+
+	<div class="container">
+		<div class="row">
+			<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
+				<tbody>
+					<tr>
+						<td align="left" bgcolor="beige">댓글</td>
+					</tr>
+					<tr>
+					<%
+						for(CommentDto tmp : list){
+					%>
+							<div class="container">	
+								<div class="row">
+									<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
+										<tbody>
+											<tr>						
+												<td align="left"><%= tmp.getComment_num() %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%=tmp.getId() %> <%=tmp.getContent() %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=tmp.getRegdate() %></td>		
+												<td colspan="2"></td>
+												<td align="right">																						
+													
+												</td>
+											</tr>
+										
+										</tbody>
+									</table>			
+								</div>
+							</div>
+							<%
+								}
+							%>
+					</tr>
+			</table>
+		</div>
+	</div>
+
 	<jsp:include page="/include/footer.jsp"></jsp:include>
 </body>
 </html>

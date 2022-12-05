@@ -24,7 +24,7 @@
 	<jsp:include page="/include/navbar.jsp">
 		<jsp:param value="index" name="thisPage"/>
 	</jsp:include>
-
+	<br />
      <div class="container">
     	<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
 		  <div class="carousel-inner">
