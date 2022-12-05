@@ -1,5 +1,5 @@
-<%@page import="test.task.dao.TaskDao"%>
-<%@page import="test.task.dto.TaskDto"%>
+<%@page import="test.notice.dao.NoticeDao"%>
+<%@page import="test.notice.dto.NoticeDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
@@ -10,13 +10,13 @@
 	String content = request.getParameter("content");
 	
 	//TaskDto에 담고
-	TaskDto dto = new TaskDto();
+	NoticeDto dto = new NoticeDto();
 	dto.setWriter(writer);
 	dto.setTitle(title);
 	dto.setContent(content);
 
 	if(writer != null && writer.equals("admin")){ 
-		boolean isSuccess = TaskDao.getInstance().insert(dto);
+		boolean isSuccess = NoticeDao.getInstance().insert(dto);
 	}
 %>
 <!DOCTYPE html>
@@ -28,7 +28,7 @@
 <body>
 	<div class="container">
 		<%if(writer != null && writer.equals("admin")){%>
-			<% boolean isSuccess = TaskDao.getInstance().insert(dto);%>
+			<% boolean isSuccess = NoticeDao.getInstance().insert(dto);%>
 		
 			<%if(isSuccess) {%>
 			<p>

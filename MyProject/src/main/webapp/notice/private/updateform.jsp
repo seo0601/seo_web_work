@@ -1,12 +1,12 @@
-<%@page import="test.task.dao.TaskDao"%>
-<%@page import="test.task.dto.TaskDto"%>
+<%@page import="test.notice.dao.NoticeDao"%>
+<%@page import="test.notice.dto.NoticeDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
 	//자세히 보여줄 글의 번호를 읽어온다.
 	int num = Integer.parseInt(request.getParameter("num"));
 	//DB에서 해당 글의 정보를 얻어와서
-	TaskDto dto = TaskDao.getInstance().getData(num);
+	NoticeDto dto = NoticeDao.getInstance().getData(num);
 %>
 <!DOCTYPE html>
 <html>
