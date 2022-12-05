@@ -41,6 +41,17 @@
 		  </button>
 		</div>
     </div>
+    <script type="text/javascript">
+	    var wnd = window.open("","info", "width=500, height=300");
+	    wnd.document.write(
+	        "<h2>서비스 중단 안내</h2>",
+	        "<ul>",
+	        "<li><strong>일시 : 2022-12-20(화) ~ 2022-12-21(수)</strong></li>",
+	        "<li>사유 : 시스템 DB서버 백업 작업</li><br>",
+	        "<p>이용에 참고하시기 바랍니다.</p>",
+	        "</ul>"
+	    )
+	</script>
 	<jsp:include page="/include/footer.jsp"></jsp:include>
 </body>
 </html>
