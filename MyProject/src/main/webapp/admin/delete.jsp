@@ -4,11 +4,10 @@
     pageEncoding="UTF-8"%>
 <%
 	//1. 로그인된 아이디를 읽어온다.
-	String id = (String)session.getAttribute("id");
+	String id = (String)request.getAttribute("id");
 	//2. DB에서 삭제한다.
 	UsersDao.getInstance().delete(id);
-	//3. 로그아웃 처리를 한다.
-	session.invalidate();
+
 	//4. 응답
 %>
 <!DOCTYPE html>
@@ -22,7 +21,7 @@
 		<h1>알림</h1>
 		<p>
 			<strong><%=id %></strong>님 탈퇴 처리되었습니다.
-			<a href="${pageContext.request.contextPath}/">인덱스로 가기</a>
+			<a href="${pageContext.request.contextPath}/admin/users_view.jsp">인덱스로 가기</a>
 		</p>
 	</div>
 </body>

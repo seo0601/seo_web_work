@@ -4,6 +4,7 @@
 	//session scope에 id라는 키값으로 저장된 값이 있는지 읽어오기(없으면 null)
 	String id = (String)session.getAttribute("id");
 %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +20,27 @@
 	</jsp:include>
 	<div class="container">
 		<div>
+			<%--
+				1. sessionScope.id != null
+				2. id != null
+				3. id ne null
+				4. not empty id
+				
+				el에서 1, 2, 3, 4는 모두 같은 결과다.
+			 --%>
+			<c:choose>
+				<c:when test="${session.getAttribute.id != null }">
+					<p>
+						<a href="${pageContext.request.contextPath}/users/private/info.jsp"><%=id %></a>님
+						<br />					
+						<button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='${pageContext.request.contextPath}/users/logout.jsp'">로그아웃</button>
+					</p>
+				</c:when>
+				<c:otherwise>
+					<button class="btn btn-outline-primary btn-sm" type="button" onclick="location.href='${pageContext.request.contextPath}/users/loginform.jsp'">로그인</button>
+				</c:otherwise>
+			</c:choose>
+			
 			<%if(id != null) {%>
 					<p>
 						<a href="${pageContext.request.contextPath}/users/private/info.jsp"><%=id %></a>님
