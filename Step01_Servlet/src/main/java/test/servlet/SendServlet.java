@@ -20,7 +20,6 @@ public class SendServlet extends HttpServlet{
 		//"msg"라는 파라미터 명으로 전달되는 문자열을 읽어와서 msg라는 지역 변수에 담기
 		//해당 파라미터 명으로 전달되는 정보가 없으면 null이 리턴된다.
 		String msg = req.getParameter("msg");
-		
 		//콘솔 창에 출력해보기
 		System.out.println("msg:"+msg);
 		

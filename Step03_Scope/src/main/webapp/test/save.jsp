@@ -7,6 +7,9 @@
 	
 	//session scope에 "nick"이라는 키 값으로 저장하기
 	session.setAttribute("nick", nick);
+	String myName = (String)session.getAttribute("id");
+
+
 %>
 <!DOCTYPE html>
 <html>

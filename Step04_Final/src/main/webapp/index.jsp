@@ -14,10 +14,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </head>
 <body>
-	<%--/include/navbar.jsp 포함시키기 --%>
-	<jsp:include page="/include/navbar.jsp">
-		<jsp:param value="index" name="thisPage"/>
-	</jsp:include>
+	<jsp:include page="/WEB-INF/include/navbar.jsp"/>
 	<div class="container">
 		<div>
 			<%--
@@ -61,6 +58,8 @@
 		<a href="https://acornedu.co.kr/index.jsp"  target="_blank">
 			<img width="300px" height="300px" src="https://t1.daumcdn.net/cfile/blog/2701793C56B186792C" />
 		</a>
+		<a href="my_app/index.html">React 테스트</a>
+		<a href="users/signup_form4.jsp">React 회원가입 폼</a>
 	</div>
 	<jsp:include page="/include/footer.jsp"></jsp:include>
 </body>
